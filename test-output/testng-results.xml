@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-12-09T13:18:48 EST" name="Suite" finished-at="2024-12-09T13:18:51 EST" duration-ms="2571">
+    <groups>
+      <group name="jiraRegression">
+        <method signature="Jira.loggingInJira()[pri:0, instance:com.restAssured.project.Jira@6ffab045]" name="loggingInJira" class="com.restAssured.project.Jira"/>
+        <method signature="Jira.creatingIssueOnJira()[pri:0, instance:com.restAssured.project.Jira@6ffab045]" name="creatingIssueOnJira" class="com.restAssured.project.Jira"/>
+      </group> <!-- jiraRegression -->
+      <group name="jiraSmoke">
+        <method signature="Jira.loggingInJira()[pri:0, instance:com.restAssured.project.Jira@6ffab045]" name="loggingInJira" class="com.restAssured.project.Jira"/>
+        <method signature="Jira.creatingIssueOnJira()[pri:0, instance:com.restAssured.project.Jira@6ffab045]" name="creatingIssueOnJira" class="com.restAssured.project.Jira"/>
+      </group> <!-- jiraSmoke -->
+      <group name="regression">
+        <method signature="GithubOauth.getAccessToken()[pri:0, instance:com.restAssured.project.GithubOauth@9635fa]" name="getAccessToken" class="com.restAssured.project.GithubOauth"/>
+        <method signature="GithubOauth.getUserInfo()[pri:0, instance:com.restAssured.project.GithubOauth@9635fa]" name="getUserInfo" class="com.restAssured.project.GithubOauth"/>
+      </group> <!-- regression -->
+      <group name="gitHubSmoke">
+        <method signature="GithubOauth.getAccessToken()[pri:0, instance:com.restAssured.project.GithubOauth@9635fa]" name="getAccessToken" class="com.restAssured.project.GithubOauth"/>
+        <method signature="GithubOauth.getUserInfo()[pri:0, instance:com.restAssured.project.GithubOauth@9635fa]" name="getUserInfo" class="com.restAssured.project.GithubOauth"/>
+      </group> <!-- gitHubSmoke -->
+    </groups>
+    <test started-at="2024-12-09T13:18:48 EST" name="Test" finished-at="2024-12-09T13:18:51 EST" duration-ms="2571">
+      <class name="com.restAssured.project.Jira">
+        <test-method signature="loggingInJira()[pri:0, instance:com.restAssured.project.Jira@6ffab045]" started-at="2024-12-09T13:18:48 EST" name="loggingInJira" finished-at="2024-12-09T13:18:50 EST" duration-ms="1479" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loggingInJira -->
+        <test-method signature="creatingIssueOnJira()[pri:0, instance:com.restAssured.project.Jira@6ffab045]" started-at="2024-12-09T13:18:50 EST" name="creatingIssueOnJira" finished-at="2024-12-09T13:18:50 EST" depends-on-methods="com.restAssured.project.Jira.loggingInJira" duration-ms="63" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[1 expectation failed.
+Expected status code <200> but was <403>.
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: 1 expectation failed.
+Expected status code <200> but was <403>.
+
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:135)
+at io.restassured.specification.ResponseSpecification$statusCode$0.callCurrent(Unknown Source)
+at io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:143)
+at io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)
+at com.restAssured.project.Jira.creatingIssueOnJira(Jira.java:44)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:228)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:961)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:201)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:819)
+at org.testng.TestRunner.run(TestRunner.java:619)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1228)
+at org.testng.TestNG.runSuites(TestNG.java:1134)
+at org.testng.TestNG.run(TestNG.java:1101)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- creatingIssueOnJira -->
+      </class> <!-- com.restAssured.project.Jira -->
+      <class name="com.restAssured.project.GithubOauth">
+        <test-method signature="getAccessToken()[pri:0, instance:com.restAssured.project.GithubOauth@9635fa]" started-at="2024-12-09T13:18:50 EST" name="getAccessToken" description="sending authorization code to get access token" finished-at="2024-12-09T13:18:50 EST" duration-ms="544" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getAccessToken -->
+        <test-method signature="getUserInfo()[pri:0, instance:com.restAssured.project.GithubOauth@9635fa]" started-at="2024-12-09T13:18:50 EST" name="getUserInfo" description="Using Access Token to get the user information" finished-at="2024-12-09T13:18:51 EST" depends-on-methods="com.restAssured.project.GithubOauth.getAccessToken" duration-ms="436" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getUserInfo -->
+      </class> <!-- com.restAssured.project.GithubOauth -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>

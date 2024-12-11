@@ -1,0 +1,6 @@
+**/*.properties
+
+*.properties
+
+**/*.txt
+*.txt

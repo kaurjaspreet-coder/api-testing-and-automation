@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [GitHub]" guice-stage="DEVELOPMENT" verbose="3">
+  <test thread-count="5" name="GitHub OAuth Test(failed)" verbose="3">
+    <groups>
+      <run>
+        <include name="gitHubLogin"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.Github.githubOauth.AccessToken">
+        <methods>
+          <include name="getAcessToken"/>
+          <include name="getUserInfo"/>
+        </methods>
+      </class> <!-- com.Github.githubOauth.AccessToken -->
+    </classes>
+  </test> <!-- GitHub OAuth Test(failed) -->
+</suite> <!-- Failed suite [GitHub] -->
